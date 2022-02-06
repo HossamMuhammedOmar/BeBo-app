@@ -1,2 +1,2 @@
-# Beatbox-JS
+# BeBo
 Beatbox app with JavaScript
