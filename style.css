@@ -180,3 +180,16 @@ svg {
   letter-spacing: 0;
 }
 /* end of play button */
+
+/* Keyframes */
+@keyframes startTrack {
+  from {
+    transform: scale(1);
+    border-radius: 0;
+  }
+  to {
+    transform: scale(1.2);
+    border-radius: 0.4rem;
+  }
+}
+/* end of keyframes */

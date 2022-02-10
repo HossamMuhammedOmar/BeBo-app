@@ -9,9 +9,30 @@ class TrackKit {
     this.play = document.querySelector(".play");
   }
 
+  activeThePads() {
+    this.classList.toggle("active");
+  }
+
   repeat() {
     let step = this.index % 8;
-    const activePad = document.querySelectorAll(`.p${step}`);
+    const activePads = document.querySelectorAll(`.p${step}`);
+    activePads.forEach((pad) => {
+      pad.style.animation = `startTrack 0.2s alternate ease-in-out 2`;
+      if (pad.classList.contains("active")) {
+        if (pad.classList.contains("kick-pad")) {
+          this.kickSound.currentTime = 0;
+          this.kickSound.play();
+        }
+        if (pad.classList.contains("snare-pad")) {
+          this.snareSound.currentTime = 0;
+          this.snareSound.play();
+        }
+        if (pad.classList.contains("hihat-pad")) {
+          this.hihatSound.currentTime = 0;
+          this.hihatSound.play();
+        }
+      }
+    });
     this.index++;
   }
 
@@ -21,15 +42,15 @@ class TrackKit {
       this.repeat();
     }, interval);
   }
-
-  activeThePads() {
-    this.pads.forEach((pad) => {
-      pad.addEventListener("click", () => {
-        pad.classList.toggle("active");
-      });
-    });
-  }
 }
 
-const testTracks = new TrackKit();
-testTracks.play.addEventListener("click", () => testTracks.activeThePads());
+const track = new TrackKit();
+
+track.pads.forEach((pad) => {
+  pad.addEventListener("click", track.activeThePads);
+  pad.addEventListener("animationend", function () {
+    this.style.animation = "";
+  });
+});
+
+track.play.addEventListener("click", () => track.start());
