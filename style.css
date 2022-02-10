@@ -58,7 +58,7 @@ svg {
   display: inline-block;
 }
 
-.hithat-track .controls span {
+.hihat-track .controls span {
   color: #f39c12;
   font-size: 2.5rem;
   transform: rotate(-15deg);
@@ -76,7 +76,7 @@ svg {
 
 .kick-track .controls button:hover,
 .snare-track .controls button:hover,
-.hithat-track .controls button:hover {
+.hihat-track .controls button:hover {
   transform: scale(1.2);
   box-shadow: 0.2rem 0.2rem 0.1rem gainsboro;
   border-radius: 50%;
@@ -90,7 +90,7 @@ svg {
   background-color: #f1796e;
 }
 
-.hithat-track .controls button:hover {
+.hihat-track .controls button:hover {
   background-color: #efab6e;
 }
 
@@ -114,7 +114,7 @@ svg {
   flex-wrap: wrap;
 }
 
-.hithat-track {
+.hihat-track {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -124,7 +124,7 @@ svg {
 /* pad tracks */
 .kick-pad,
 .snare-pad,
-.hithat-pad {
+.hihat-pad {
   width: 4rem;
   height: 4rem;
   margin: 1rem 0.5rem;
@@ -139,7 +139,7 @@ svg {
   background-color: #f1796e;
 }
 
-.hithat-pad {
+.hihat-pad {
   background-color: #efab6e;
 }
 
@@ -153,7 +153,7 @@ svg {
 .snare-pad.active {
   background-color: #e64334;
 }
-.hithat-pad.active {
+.hihat-pad.active {
   background-color: #e2781b;
 }
 /* end of pad tracks */
