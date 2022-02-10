@@ -5,9 +5,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BeBo</title>
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- End of font awesome -->
+
+    <!-- My style -->
     <link rel="stylesheet" href="style.css" />
+    <!-- End of my style -->
   </head>
   <body>
+    <div class="container">
+      <!-- kick track -->
+      <div class="kick-track">
+        <div class="controls">
+          <h1>Kick Track</h1>
+          <button class="mute kick-volume" data-track="0">
+            <i class="fa-solid fa-volume-xmark"></i>
+          </button>
+          <select name="kick-select" id="kick-select">
+            <option value="/sounds/kick-classic.wav">Classic Track</option>
+            <option value="/sounds/kick-heavy.wav">Heavy Track</option>
+            <option value="/sounds/kick-softy.wav">Softy Track</option>
+            <option value="/sounds/kick-808.wav">808 Track</option>
+          </select>
+        </div>
+        <div class="pads">
+          <div class="pad kick-pad p0"></div>
+          <div class="pad kick-pad p1"></div>
+          <div class="pad kick-pad p2"></div>
+          <div class="pad kick-pad p3"></div>
+          <div class="pad kick-pad p4"></div>
+          <div class="pad kick-pad p5"></div>
+          <div class="pad kick-pad p6"></div>
+          <div class="pad kick-pad p7"></div>
+        </div>
+      </div>
+      <!-- end of kick track -->
+
+      <!-- snare track -->
+      <div class="snare-track">
+        <div class="controls">
+          <h1>snare Track</h1>
+          <button class="mute snare-volume" data-track="0">
+            <i class="fa-solid fa-volume-xmark"></i>
+          </button>
+          <select name="snare-select" id="snare-select">
+            <option value="/sounds/snare-808.wav">808 Track</option>
+            <option value="/sounds/snare-acoustic.wav">Acoustic Track</option>
+            <option value="/sounds/snare-vinyl.wav">Vinyl Track</option>
+          </select>
+        </div>
+        <div class="pads">
+          <div class="pad snare-pad p0"></div>
+          <div class="pad snare-pad p1"></div>
+          <div class="pad snare-pad p2"></div>
+          <div class="pad snare-pad p3"></div>
+          <div class="pad snare-pad p4"></div>
+          <div class="pad snare-pad p5"></div>
+          <div class="pad snare-pad p6"></div>
+          <div class="pad snare-pad p7"></div>
+        </div>
+      </div>
+      <!-- end of snare track -->
+
+      <!-- hithat track -->
+      <div class="hithat-track">
+        <div class="controls">
+          <h1>hithat Track</h1>
+          <button class="mute hithat-volume" data-track="0">
+            <i class="fa-solid fa-volume-xmark"></i>
+          </button>
+          <select name="hithat-select" id="hithat-select">
+            <option value="/sounds/hithat-808.wav">808 Track</option>
+            <option value="/sounds/hithat-acoustic.wav">Acoustic Track</option>
+          </select>
+        </div>
+        <div class="pads">
+          <div class="pad hithat-pad p0"></div>
+          <div class="pad hithat-pad p1"></div>
+          <div class="pad hithat-pad p2"></div>
+          <div class="pad hithat-pad p3"></div>
+          <div class="pad hithat-pad p4"></div>
+          <div class="pad hithat-pad p5"></div>
+          <div class="pad hithat-pad p6"></div>
+          <div class="pad hithat-pad p7"></div>
+        </div>
+      </div>
+      <!-- end of hithat track -->
+
+      <button class="play">Play</button>
+      <audio class="kick-sound" src="/sounds/kick-classic.wav"></audio>
+      <audio class="snare-sound" src="/sounds/snare-acoustic.wav"></audio>
+      <audio class="hithat-sound" src="/sounds/hihat-808.wav"></audio>
+    </div>
+    <!-- My javascript -->
     <script src="app.js"></script>
+    <!-- End of my javascript -->
   </body>
 </html>
