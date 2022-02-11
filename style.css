@@ -192,4 +192,11 @@ svg {
     border-radius: 0.4rem;
   }
 }
+
+/* Active Mute button */
+.mute.active {
+  background-color: dimgray;
+}
+/* End of active mute button */
+
 /* end of keyframes */

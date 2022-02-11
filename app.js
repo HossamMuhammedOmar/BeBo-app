@@ -12,6 +12,7 @@ class TrackKit {
     this.currentSnare = "/sounds/snare-acoustic.wav";
     this.currentHihat = "/sounds/hihat-acoustic.wav";
     this.selects = document.querySelectorAll("select");
+    this.muteBtn = document.querySelectorAll(".mute");
   }
 
   activeThePads() {
@@ -56,10 +57,8 @@ class TrackKit {
   updateButtonText() {
     if (!this.isPlaying) {
       this.play.innerText = "STOP";
-      this.play.classList.add("active");
     } else {
       this.play.innerText = "PLAY";
-      this.play.classList.remove("active");
     }
   }
 
@@ -77,6 +76,38 @@ class TrackKit {
       case "hihat-select":
         this.hihatSound.src = selectValue;
         break;
+    }
+  }
+
+  muteSound(e) {
+    const targetClass = e.target.classList;
+    targetClass.toggle("active");
+    const trackIndex = e.target.dataset.track;
+
+    if (targetClass.contains("active")) {
+      switch (trackIndex) {
+        case "0":
+          this.kickSound.volume = 0;
+          break;
+        case "1":
+          this.snareSound.volume = 0;
+          break;
+        case "2":
+          this.hihatSound.volume = 0;
+          break;
+      }
+    } else {
+      switch (trackIndex) {
+        case "0":
+          this.kickSound.volume = 1;
+          break;
+        case "1":
+          this.snareSound.volume = 1;
+          break;
+        case "2":
+          this.hihatSound.volume = 1;
+          break;
+      }
     }
   }
 }
@@ -99,4 +130,8 @@ track.selects.forEach((select) => {
   select.addEventListener("change", function (e) {
     track.changeSound(e);
   });
+});
+
+track.muteBtn.forEach((mute) => {
+  mute.addEventListener("click", (e) => track.muteSound(e));
 });
