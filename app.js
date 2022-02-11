@@ -13,6 +13,7 @@ class TrackKit {
     this.currentHihat = "/sounds/hihat-acoustic.wav";
     this.selects = document.querySelectorAll("select");
     this.muteBtn = document.querySelectorAll(".mute");
+    this.speedSlider = document.querySelector(".speed-slider");
   }
 
   activeThePads() {
@@ -57,8 +58,10 @@ class TrackKit {
   updateButtonText() {
     if (!this.isPlaying) {
       this.play.innerText = "STOP";
+      this.play.classList.add("active");
     } else {
       this.play.innerText = "PLAY";
+      this.play.classList.remove("active");
     }
   }
 
@@ -110,6 +113,21 @@ class TrackKit {
       }
     }
   }
+
+  changeSpeed(e) {
+    const speedText = document.querySelector(".speed-value");
+    speedText.innerText = e.target.value;
+  }
+
+  updateSpeed(e) {
+    this.trackSpeed = e.target.value;
+    clearInterval(this.isPlaying);
+    this.isPlaying = null;
+    const playBtn = document.querySelector(".play");
+    if (playBtn.classList.contains("active")) {
+      this.start();
+    }
+  }
 }
 
 const track = new TrackKit();
@@ -134,4 +152,12 @@ track.selects.forEach((select) => {
 
 track.muteBtn.forEach((mute) => {
   mute.addEventListener("click", (e) => track.muteSound(e));
+});
+
+track.speedSlider.addEventListener("input", (e) => {
+  track.changeSpeed(e);
+});
+
+track.speedSlider.addEventListener("change", (e) => {
+  track.updateSpeed(e);
 });
