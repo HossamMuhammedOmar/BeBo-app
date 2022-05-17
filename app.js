@@ -8,9 +8,9 @@ class TrackKit {
     this.trackSpeed = 250;
     this.play = document.querySelector(".play");
     this.isPlaying = null;
-    this.currentKick = "/sounds/kick-classic.wav";
-    this.currentSnare = "/sounds/snare-acoustic.wav";
-    this.currentHihat = "/sounds/hihat-acoustic.wav";
+    this.currentKick = "sounds/kick-classic.wav";
+    this.currentSnare = "sounds/snare-acoustic.wav";
+    this.currentHihat = "sounds/hihat-acoustic.wav";
     this.selects = document.querySelectorAll("select");
     this.muteBtn = document.querySelectorAll(".mute");
     this.speedSlider = document.querySelector(".speed-slider");
